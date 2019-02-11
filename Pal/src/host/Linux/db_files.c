@@ -45,6 +45,7 @@ typedef __kernel_pid_t pid_t;
 static int file_open (PAL_HANDLE * handle, const char * type, const char * uri,
                       int access, int share, int create, int options)
 {
+    pal_printf("%#$%#$#%$#%$#%#$%# type: %s\n", type);
     /* try to do the real open */
     int ret = INLINE_SYSCALL(open, 3, uri,
                              HOST_ACCESS(access)|create|options|O_CLOEXEC,
